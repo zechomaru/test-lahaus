@@ -1,0 +1,18 @@
+<h1>Homepage</h1>
+
+<% if current_user %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
+
+<% if current_user %>
+			<% if current_user.image %>
+      	<%= image_tag(current_user.image) %>
+    	<%end%>
+      <br>
+      Bienvenido <br>
+      <% if current_user.name %>
+      	<%= current_user.name %>
+      	<%else%>
+      	<%= current_user.email %>
+      	<%end%>
+    <% end %>
